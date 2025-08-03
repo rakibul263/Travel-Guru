@@ -20,7 +20,7 @@ const BookingCard = () => {
         <label className="text-white text-sm">Destination</label>
         <input
           type="text"
-          value="Cox’s Bazar"
+          value="Sajek"
           readOnly
           className="w-full mt-1 p-3 rounded-lg bg-gray-100 font-semibold"
         />
