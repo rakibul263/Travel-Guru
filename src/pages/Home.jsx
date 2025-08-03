@@ -8,12 +8,12 @@ const Home = () => {
   const [rightAside, setRightAside] = useState(null);
   return (
     <div
-      className="relative min-h-screen bg-cover bg-center "
+      className="relative min-h-screen bg-cover bg-center overflow-x-hidden max-w-screen"
       style={{
         backgroundImage: `url(${bgImage})`,
       }}
     >
-      <div className="absolute inset-0 bg-black opacity-82">
+      <div className="absolute inset-0 bg-black opacity-82 overflow-x-hidden max-w-screen">
         <header>
           <Navbar></Navbar>
         </header>

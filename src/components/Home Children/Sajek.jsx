@@ -15,25 +15,13 @@ const Sajek = () => {
   return (
     <div className="text-white space-y-4">
       <h1 className="text-7xl font-bold">Sajek</h1>
-      {clicked ? (
-        <h3 className="text-justify">
-          Sajek Valley is one of the most popular tourist destinations in
-          Bangladesh, located in the Rangamati district. Known as the “Queen of
-          Hills,” Sajek is famous for its stunning natural beauty, serene
-          atmosphere, and sea of clouds.
-        </h3>
-      ) : (
-        <h3>
-          Sajek Valley is one of the most breathtaking tourist destinations in
-          Bangladesh, situated in the Rangamati district. Known as the “Queen of
-          Hills,” Sajek offers a mesmerizing blend of lush green hills, dense
-          forests, winding mountain roads, and the magical sea of clouds. It's
-          an ideal escape from city life and a paradise for photographers,
-          nature lovers, and adventurers alike. The valley becomes especially
-          charming at dawn and dusk, making it a perfect destination for
-          romantic getaways and peaceful retreats.
-        </h3>
-      )}
+
+      <h3 className="text-justify">
+        {clicked
+          ? "Sajek Valley is one of the most popular tourist destinations in Bangladesh, located in the Rangamati district. Known as the “Queen of Hills,” Sajek is famous for its stunning natural beauty, serene atmosphere, and sea of clouds."
+          : "Sajek Valley is one of the most breathtaking tourist destinations in Bangladesh, situated in the Rangamati district. Known as the “Queen of Hills,” Sajek offers a mesmerizing blend of lush green hills, dense forests, winding mountain roads, and the magical sea of clouds. It's an ideal escape from city life and a paradise for photographers, nature lovers, and adventurers alike. The valley becomes especially charming at dawn and dusk, making it a perfect destination for romantic getaways and peaceful retreats."}
+      </h3>
+
       {clicked && (
         <button
           onClick={handleClick}

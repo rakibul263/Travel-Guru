@@ -36,13 +36,13 @@ const Register = () => {
 
   const handleGoogle = () => {
     googleSignUp()
-    .then(result => {
-      const user = result.user;
-      setUser(user);
-    })
-    .catch(error=> {
-      toast.error(error.message);
-    })
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
   };
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
@@ -98,7 +98,10 @@ const Register = () => {
         </div>
 
         <div className="space-y-3">
-          <button className="flex items-center justify-center w-full border py-2 rounded hover:bg-gray-100" onClick={handleGoogle}>
+          <button
+            className="flex items-center justify-center w-full border py-2 rounded hover:bg-gray-100"
+            onClick={handleGoogle}
+          >
             <FcGoogle size={25}></FcGoogle>
             <span className="ml-2">Continue with Google</span>
           </button>

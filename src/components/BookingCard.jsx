@@ -3,10 +3,10 @@ import { FaCalendarAlt } from "react-icons/fa";
 
 const BookingCard = () => {
   return (
-    <div className="bg-white p-8 rounded-xl w-full max-w-md shadow-lg space-y-6">
+    <div className="bg-transparent p-8 rounded-xl w-full max-w-md shadow-lg space-y-6">
       {/* Origin */}
       <div>
-        <label className="text-gray-500 text-sm">Origin</label>
+        <label className="text-white text-sm">Origin</label>
         <input
           type="text"
           value="Dhaka"
@@ -17,7 +17,7 @@ const BookingCard = () => {
 
       {/* Destination */}
       <div>
-        <label className="text-gray-500 text-sm">Destination</label>
+        <label className="text-white text-sm">Destination</label>
         <input
           type="text"
           value="Cox’s Bazar"
@@ -29,7 +29,7 @@ const BookingCard = () => {
       {/* Date Range */}
       <div className="flex justify-between gap-4">
         <div className="w-1/2">
-          <label className="text-gray-500 text-sm">Form</label>
+          <label className="text-white text-sm">Form</label>
           <div className="relative mt-1">
             <input
               type="text"
@@ -41,7 +41,7 @@ const BookingCard = () => {
           </div>
         </div>
         <div className="w-1/2">
-          <label className="text-gray-500 text-sm">To</label>
+          <label className="text-white text-sm">To</label>
           <div className="relative mt-1">
             <input
               type="text"

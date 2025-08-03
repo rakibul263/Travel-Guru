@@ -33,14 +33,14 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <Login></Login>,
+    Component: Login,
     children: [
       {
         index: true,
         Component: SignUp,
       },
       {
-        path: "/login/register",
+        path: "register",
         Component: Register,
       },
     ],
