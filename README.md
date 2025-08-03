@@ -1,12 +1,32 @@
-# React + Vite
+# ✈️ Travel-Guru: Your Travel Companion
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Travel-Guru is a modern, user-friendly, and responsive travel website. It is designed for travel enthusiasts who want to explore new destinations, plan trips, and get expert advice. This platform is suitable for all types of travelers, from budget backpackers to luxury seekers.
 
-Currently, two official plugins are available:
+## 🌟 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Secure Login with Firebase:** Safe user registration and login using email/password and Google sign-in.
+- **Attractive User Interface:** Beautiful and intuitive UI built with React.
+- **Location-Based Information:** Detailed descriptions, images, and maps of various travel destinations.
+- **Booking System:** Ability to book hotels at selected locations.
+- **Fully Responsive Design:** Compatible with mobile, tablet, and desktop devices.
+- **Fast Performance:** Powered by Vite for fast page loads and enhanced performance.
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** React.js, React Router, HTML5, CSS3
+- **Build Tool:** Vite
+- **Backend & Authentication:** Firebase Authentication
+- **Deployment:** Firebase Hosting (or any preferred platform)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js and npm installed on your system.
+
+### Installation
+
+```bash
+git clone https://github.com/rakibul263/Travel-Guru.git
+cd Travel-Guru
+npm install
