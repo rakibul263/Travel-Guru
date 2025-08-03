@@ -7,19 +7,19 @@ import { NavLink } from "react-router";
 const RightBanner = () => {
   return (
     <div className="carousel carousel-center rounded-box max-w-full space-x-4 p-4 h-[400px]">
-      <NavLink className="carousel-item">
+      <NavLink className="carousel-item" to="/sajek">
         <img
           src={sajek}
           className="rounded-box opacity-100"
         />
       </NavLink>
-      <NavLink className="carousel-item">
+      <NavLink className="carousel-item" to="/sundorbon">
         <img
           src={sundorbon}
           className="rounded-box"
         />
       </NavLink>
-      <NavLink className="carousel-item">
+      <NavLink className="carousel-item" to="/srimongol">
         <img
           src={srimongol}
           className="rounded-box"

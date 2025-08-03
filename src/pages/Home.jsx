@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import bgImage from "../assets/Rectangle 1.png";
 import Navbar from "../components/Navbar";
-import LeftBanner from "../components/LeftBanner";
 import RightBanner from "../components/RightBanner";
+import { Outlet } from "react-router";
 
 const Home = () => {
+  const [rightAside, setRightAside] = useState(null);
   return (
     <div
       className="relative min-h-screen bg-cover bg-center "
@@ -16,12 +17,12 @@ const Home = () => {
         <header>
           <Navbar></Navbar>
         </header>
-        <main className="grid grid-cols-12 items-center place-items-center h-[100vh] w-8/12 mx-auto gap-15">
+        <main className="grid grid-cols-12 items-center place-items-center h-[100vh] w-8/12  gap-15 mx-auto">
           <section className="col-span-5">
-            <LeftBanner></LeftBanner>
+            <Outlet context={setRightAside} />
           </section>
           <section className="col-span-7">
-              <RightBanner></RightBanner>
+            {rightAside || <RightBanner />}
           </section>
         </main>
       </div>

@@ -1,28 +1,35 @@
 import React from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink, useLocation, useNavigate } from "react-router";
 import logo from "../assets/logo.png";
 import { FaSearch } from "react-icons/fa";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isLoginPage = location.pathname === "/login";
+
+  const handleClick = () => {
+    navigate('/');
+  }
   const links = (
     <>
-      <li className="text-white text-xl">
-        <NavLink>News</NavLink>
+      <li className={`${isLoginPage ? "text-black" : "text-white"} text-xl`}>
+        <NavLink to="/news">News</NavLink>
       </li>
-      <li className="text-white text-xl">
-        <NavLink>Destination</NavLink>
+      <li className={`${isLoginPage ? "text-black" : "text-white"} text-xl`}>
+        <NavLink to="/destination">Destination</NavLink>
       </li>
-      <li className="text-white text-xl">
-        <NavLink>Blog</NavLink>
+      <li className={`${isLoginPage ? "text-black" : "text-white"} text-xl`}>
+        <NavLink to="/blog">Blog</NavLink>
       </li>
-      <li className="text-white text-xl">
-        <NavLink>Contact</NavLink>
+      <li className={`${isLoginPage ? "text-black" : "text-white"} text-xl`}>
+        <NavLink to="/contact">Contact</NavLink>
       </li>
     </>
   );
 
   return (
-    <div className="navbar bg-transparent shadow-sm w-8/12 mx-auto">
+    <div className="navbar bg-transparent  w-8/12 mx-auto">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -50,24 +57,35 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-8 text-white">
-          <img className="w-[120px] h-[56px]" src={logo} alt="Logo" />
+          <img
+            onClick={handleClick}
+            className="w-[120px] h-[56px]"
+            src={logo}
+            alt="Logo"
+          />
 
-          <div className="relative w-70 md:w-48 flex-1">
-            <FaSearch
-              className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-400"
-              size={16}
-            />
-            <input
-              type="text"
-              placeholder="Search your Destination..."
-              className="input input-bordered input-sm w-full bg-transparent border-white pl-8 text-white placeholder-white"
-            />
-          </div>
+          {isLoginPage ? (
+            " "
+          ) : (
+            <div className="relative w-70 md:w-48 flex-1">
+              <FaSearch
+                className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-400"
+                size={16}
+              />
+              <input
+                type="text"
+                placeholder="Search your Destination..."
+                className="input input-bordered input-sm w-full bg-transparent border-white pl-8 text-white placeholder-white"
+              />
+            </div>
+          )}
         </div>
       </div>
       <div className="navbar-end flex items-center gap-6">
         <ul className="menu menu-horizontal px-1">{links}</ul>
-        <a className="btn btn-primary text-black">Login</a>
+        <Link to="/login" className="btn btn-primary text-black">
+          Login
+        </Link>
       </div>
     </div>
   );
