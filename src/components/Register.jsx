@@ -1,4 +1,7 @@
 import React from "react";
+import { FaGoogle } from "react-icons/fa6";
+import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router";
 
 const Register = () => {
   return (
@@ -45,9 +48,9 @@ const Register = () => {
 
         <p className="text-center mt-4 text-sm">
           Already have an account?{" "}
-          <a href="/login" className="text-orange-500 hover:underline">
+          <Link to="/login" className="text-orange-500 hover:underline">
             Login
-          </a>
+          </Link>
         </p>
 
         <div className="flex items-center my-4">
@@ -66,12 +69,8 @@ const Register = () => {
             Continue with Facebook
           </button>
           <button className="flex items-center justify-center w-full border py-2 rounded hover:bg-gray-100">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-              alt="Google"
-              className="w-5 h-5 mr-2"
-            />
-            Continue with Google
+            <FcGoogle size={25}></FcGoogle>
+            <span className="ml-2">Continue with Google</span>
           </button>
         </div>
       </div>

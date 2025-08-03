@@ -6,11 +6,12 @@ import { FaSearch } from "react-icons/fa";
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const isLoginPage = location.pathname === "/login";
+  const isLoginPage =
+    location.pathname === "/login" || location.pathname === "/login/register";
 
   const handleClick = () => {
-    navigate('/');
-  }
+    navigate("/");
+  };
   const links = (
     <>
       <li className={`${isLoginPage ? "text-black" : "text-white"} text-xl`}>

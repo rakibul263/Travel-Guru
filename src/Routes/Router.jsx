@@ -33,16 +33,16 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    Component: Login,
+    element: <Login></Login>,
     children: [
       {
         index: true,
         Component: SignUp,
       },
-      // {
-      //   path: "/register",
-      //   Component: Register,
-      // },
+      {
+        path: "/login/register",
+        Component: Register,
+      },
     ],
   },
   {

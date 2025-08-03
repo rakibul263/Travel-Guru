@@ -55,7 +55,10 @@ const SignUp  = () => {
           {/* Signup link */}
           <p className="text-center text-sm mt-4">
             Don’t have an account?{" "}
-            <Link to="/register" className="text-orange-500 hover:underline">
+            <Link
+              to="/login/register"
+              className="text-orange-500 hover:underline"
+            >
               Create an account
             </Link>
           </p>
