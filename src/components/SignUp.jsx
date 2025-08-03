@@ -1,9 +1,36 @@
-import React from "react";
+import React, { use } from "react";
 import { Link } from "react-router";
 import { FaFacebookF } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from "../Provider/AuthProvider";
 
-const SignUp  = () => {
+const SignUp = () => {
+  const { googleSignUp } = use(AuthContext);
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const email = e.target.email.value;
+  //   const password = e.target.password.value;
+
+  //   createUser(email, password)
+  //     .then((result) => {
+  //       const user = result.user;
+  //       setUser(user);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error.message);
+  //     });
+  // };
+  const handleGoogle = () => {
+      googleSignUp()
+      .then(result => {
+        const user = result.user;
+        setUser(user);
+      })
+      .catch(error=> {
+        toast.error(error.message);
+      })
+    };
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-white px-4">
       <div className="w-full max-w-md border border-gray-200 rounded-md p-8 shadow-sm">
@@ -11,10 +38,9 @@ const SignUp  = () => {
 
         <form>
           <div className="mb-4">
-            <label className="block mb-1 text-sm font-medium">
-              Username or Email
-            </label>
+            <label className="block mb-1 text-sm font-medium">Email</label>
             <input
+              name="email"
               type="email"
               placeholder="Enter your email"
               className="w-full border-b border-gray-300 outline-none py-2"
@@ -26,6 +52,7 @@ const SignUp  = () => {
           <div className="mb-4">
             <label className="block mb-1 text-sm font-medium">Password</label>
             <input
+              name="password"
               type="password"
               placeholder="Enter your password"
               className="w-full border-b border-gray-300 outline-none py-2"
@@ -72,19 +99,11 @@ const SignUp  = () => {
         <hr className="flex-grow border-t border-gray-300" />
       </div>
 
-      {/* Social Login Buttons */}
-      <div className="w-full max-w-md flex flex-col gap-4">
-        <button className="flex items-center justify-center gap-3 border border-gray-200 py-2 rounded-full hover:shadow">
-          <FaFacebookF className="text-blue-600" />
-          <span>Continue with Facebook</span>
-        </button>
-
-        <button className="flex items-center justify-center gap-3 border border-gray-200 py-2 rounded-full hover:shadow">
+        <button className="flex items-center justify-center gap-3 border border-gray-200 py-2 rounded-full hover:shadow p-4" onClick={handleGoogle}>
           <FcGoogle className="text-xl" />
           <span>Continue with Google</span>
         </button>
       </div>
-    </div>
   );
 };
 
